@@ -1,0 +1,362 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GMA-AI — Intelligent Software for Modern Business</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1f2328;
+      background: #ffffff;
+    }
+
+    a { color: #3b82d4; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      background: #ffffff;
+    }
+    .nav-brand {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1f2328;
+      letter-spacing: -0.02em;
+    }
+    .nav-brand span { color: #3b82d4; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: #57606a; font-size: 0.9rem; }
+    .nav-links a:hover { color: #1f2328; text-decoration: none; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── HERO ── */
+    .hero {
+      background: #f7f8fa;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 4rem 1.5rem 3.5rem;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3b82d4;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      color: #1f2328;
+      max-width: 560px;
+      margin: 0 auto 1rem;
+    }
+    .hero p {
+      color: #57606a;
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #3b82d4;
+      color: #fff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .btn:hover { background: #2c6fbf; text-decoration: none; }
+    .btn-outline {
+      background: transparent;
+      color: #3b82d4;
+      border: 1.5px solid #3b82d4;
+      margin-left: 0.75rem;
+    }
+    .btn-outline:hover { background: #f0f6ff; text-decoration: none; }
+
+    /* ── SECTION ── */
+    section { padding: 3rem 0; }
+    section + section { border-top: 1px solid #e5e7eb; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #3b82d4;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .lead {
+      color: #57606a;
+      margin-bottom: 1.75rem;
+      max-width: 580px;
+    }
+
+    /* ── PRODUCT CARDS ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 520px) { .card-grid { grid-template-columns: 1fr; } }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      background: #ffffff;
+    }
+    .card-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #7c5cd8;
+      background: #f3f0ff;
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .card-tag.blue { color: #3b82d4; background: #eff6ff; }
+    .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .card p { font-size: 0.88rem; color: #57606a; line-height: 1.55; }
+
+    /* ── FEATURE LIST ── */
+    .feature-list { list-style: none; margin: 0; padding: 0; }
+    .feature-list li {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #f0f1f3;
+      font-size: 0.92rem;
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feat-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+    }
+
+    /* ── ABOUT ── */
+    .about-block {
+      background: #f7f8fa;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+    }
+    .about-block p { color: #57606a; margin-bottom: 0.75rem; }
+    .about-block p:last-child { margin-bottom: 0; }
+
+    /* ── CONTACT ── */
+    .contact-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .contact-item { font-size: 0.9rem; color: #57606a; }
+    .contact-item strong { color: #1f2328; display: block; margin-bottom: 0.1rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+      color: #57606a;
+      font-size: 0.78rem;
+    }
+    footer .footer-links { margin-bottom: 0.4rem; }
+    footer .footer-links a { color: #57606a; margin: 0 0.5rem; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: #f7f8fa;
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1rem 1.5rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .trust-item { font-size: 0.82rem; color: #57606a; display: flex; align-items: center; gap: 0.35rem; }
+  </style>
+</head>
+<body>
+
+  
+  <nav>
+    <div class="nav-brand"><img src="static/gma-ai-logo-small.png" alt="GMA-AI" style="height:36px;width:auto;vertical-align:middle;margin-right:0.5rem;">GMA<span>-AI</span></div>
+    <div class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  
+  <div class="hero">
+    <div class="container">
+      <span class="hero-eyebrow">GMA-AI Platform</span>
+      <h1>Intelligent Software for Finance &amp; Business Intelligence</h1>
+      <p>GMA-AI builds AI-powered applications that give individuals and organizations a clear, actionable view of their financial and operational data.</p>
+      <a href="#products" class="btn">View Products</a>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+
+  
+  <div class="trust-bar">
+    <span class="trust-item">
+      <svg class="feat-icon" fill="none"><path d="M9 12l2 2 4-4" stroke="#3b82d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="10" cy="10" r="8" stroke="#3b82d4" stroke-width="1.5"></circle></svg>
+      Secure by design
+    </span>
+    <span class="trust-item">
+      <svg class="feat-icon" fill="none"><path d="M3 10h14M10 3v14" stroke="#3b82d4" stroke-width="1.8" stroke-linecap="round"></path></svg>
+      AI-first architecture
+    </span>
+    <span class="trust-item">
+      <svg class="feat-icon" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="#3b82d4" stroke-width="1.5"></rect><path d="M7 9h6M7 12h4" stroke="#3b82d4" stroke-width="1.5" stroke-linecap="round"></path></svg>
+      SaaS subscription billing
+    </span>
+    <span class="trust-item">
+      <svg class="feat-icon" fill="none"><path d="M10 3C6.13 3 3 6.13 3 10s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7z" stroke="#3b82d4" stroke-width="1.5"></path><path d="M10 7v4l2.5 2.5" stroke="#3b82d4" stroke-width="1.5" stroke-linecap="round"></path></svg>
+      Real-time insights
+    </span>
+  </div>
+
+  
+  <section id="products">
+    <div class="container">
+      <div class="section-label">What We Build</div>
+      <h2>Our Products</h2>
+      <p class="lead">GMA-AI's platform spans personal finance management, business intelligence, and the AI infrastructure that powers them both.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-tag blue">Finance</span>
+          <h3>FinanceAgent</h3>
+          <p>AI-powered personal and family finance management. Automatic transaction import, bill matching, smart categorization, and natural-language chat with your financial data.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag">Business Intelligence</span>
+          <h3>Clearscope BDI</h3>
+          <p>Business Development Intelligence platform for structured assessments, talent analysis, opportunity management, and outcome tracking across an organization.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag blue">Infrastructure</span>
+          <h3>SubService</h3>
+          <p>GMA-AI's subscription billing engine — SaaS-ready plan management, Stripe payment processing, and multi-product subscription lifecycle handled in one service.</p>
+        </div>
+        <div class="card">
+          <span class="card-tag">AI Layer</span>
+          <h3>Agent Infrastructure</h3>
+          <p>Shared LLM routing layer powering all GMA-AI products. Supports local models (Mistral, Granite) and cloud AI (IBM watsonx) with automatic failover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section>
+    <div class="container">
+      <div class="section-label">Platform Capabilities</div>
+      <h2>Built for real-world intelligence</h2>
+      <p class="lead">Every GMA-AI product is backed by the same core principles: data accuracy, AI augmentation, and practical usability.</p>
+
+      <ul class="feature-list">
+        <li>
+          <svg class="feat-icon" fill="none"><path d="M4 10l4 4 8-8" stroke="#3b82d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span><strong>Automatic transaction processing</strong> — import, deduplicate, and categorize financial data from multiple institutions with zero manual effort.</span>
+        </li>
+        <li>
+          <svg class="feat-icon" fill="none"><path d="M4 10l4 4 8-8" stroke="#3b82d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span><strong>AI-assisted categorization and matching</strong> — pattern-based rules with an LLM fallback learn from corrections over time.</span>
+        </li>
+        <li>
+          <svg class="feat-icon" fill="none"><path d="M4 10l4 4 8-8" stroke="#3b82d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span><strong>Subscription billing via Stripe</strong> — metered and flat-rate plans, payment methods, invoicing, and webhook processing handled end-to-end.</span>
+        </li>
+        <li>
+          <svg class="feat-icon" fill="none"><path d="M4 10l4 4 8-8" stroke="#3b82d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span><strong>Structured business assessments</strong> — Clearscope BDI guides practitioners through repeatable evaluation and outcome measurement workflows.</span>
+        </li>
+        <li>
+          <svg class="feat-icon" fill="none"><path d="M4 10l4 4 8-8" stroke="#3b82d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span><strong>Local-first AI</strong> — sensitive financial data stays on your infrastructure; cloud AI is available as an optional augmentation layer, not a requirement.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  
+  <section id="about">
+    <div class="container">
+      <div class="section-label">About</div>
+      <h2>About GMA-AI</h2>
+      <div class="about-block">
+        <p>GMA-AI is an independent software company founded and led by Bradley Green. We design and build intelligent software tools that give individuals and businesses a clearer picture of their finances and operations — powered by practical AI, not hype.</p>
+        <p>Our work is grounded in real-world problems: tracking where money goes, identifying patterns in business performance, and removing the manual burden of data work. Each product in the GMA-AI platform is production-tested against real data before it reaches customers.</p>
+        <p>We are headquartered in the United States and operate as a registered business entity.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="contact">
+    <div class="container">
+      <div class="section-label">Get in Touch</div>
+      <h2>Contact</h2>
+      <p class="lead">Have questions about our products or want to learn more about GMA-AI?</p>
+      <div class="contact-row">
+        <div class="contact-item">
+          <strong>General Inquiries</strong>
+          <a href="mailto:info@gma-ai.com">info@gma-ai.com</a>
+        </div>
+        <div class="contact-item">
+          <strong>Support</strong>
+          <a href="mailto:support@gma-ai.com">support@gma-ai.com</a>
+        </div>
+        <div class="contact-item">
+          <strong>Website</strong>
+          <a href="https://www.gma-ai.com">www.gma-ai.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="footer-links">
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div>© 2024–2025 GMA-AI · All rights reserved · <a href="mailto:info@gma-ai.com">info@gma-ai.com</a></div>
+    <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid #e5e7eb;color:#9ca3af;font-size:0.72rem">Made with IBM Bob</div>
+  </footer>
+
+</body>
+</html>
